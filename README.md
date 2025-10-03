@@ -23,7 +23,7 @@ available tooling designed for tabular data, not really accounting for the dynam
 - knowing that does not solve our "optimal time warping" issue
 
 ## If a fixed lag approach is not relevant, how can we find an efficient vector of lags from a source to a target ?
-Here is the proposed approached
+proposed approach
  - a baseline can be drawn using a rolling window XI-corr approach : we pick a window size and roll on with xi-corr, we pick the lag yielding the best corr. This can be achieved in pure polars. Careful with the ranks needed for xi-corr : they need to be built once for all
  - we can use a similar approach but using Transfer Entropy, either in a rolling-window fashion or using Dynamic Programming.
  - Once the vector of "optimal time warping" is found: it can be studied as a standalone output. It is the context in which information from `source` ideally transits to `target`
